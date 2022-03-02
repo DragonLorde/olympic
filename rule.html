@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Телекоммуникационный марафон по
+теории вероятности "Под лупой случайности"</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/cookielib/src/cookie.min.js"></script>
+    <link rel="stylesheet" href="style/index.css">
+</head>
+<body>
+    <img class="btn__menust" src="img/menu.svg" alt="" width="30px" style="margin-left: 15px; transform: rotateY(80deg); transform: translateY(-50%); top: 50%; cursor: pointer; position: fixed; z-index: 5000;">
+    <div class="menu menu__hide">
+        <div class="menu__list">
+            <ol>
+                <li><a href="/"> Главная </a></li>
+
+                <li><a href="posts.html"> Посты </a></li>
+                <li><a href="task.html"> Задания </a></li>
+                <li><a href="rule.html"> Правила </a></li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        const ButtonMenu = document.querySelector('.btn__menust')
+        ButtonMenu.addEventListener('click', () => {
+            if(document.querySelector('.menu').classList.toggle('menu__hide')) {
+                ButtonMenu.src = 'img/menu.svg'
+                ButtonMenu.style.transform = 'transform: rotateZ(360deg)'
+            } else { 
+                ButtonMenu.src = 'img/menu_black.svg'
+            }
+        })
+    </script>
+    <div class="hide form login">
+        <form onsubmit="authIs(); return false;">
+            <p>Вход</p>
+            <input type="text" placeholder="Логин" required>
+            <input type="password" placeholder="Пароль" required>
+            <button class="auth__bt">Войти</button>
+            <p class="eroor" style="color:tomato;"></p>
+        </form>
+    </div>
+    <div class="wrapper task">
+        <header class="header">
+            <div class="header__logo">
+                <img src="img/logo.svg" alt="">
+                <p>платформы для проведения <br> дистанционных конкурсов</p>
+            </div>
+            <!-- <div class="header__list">
+                <ol>
+                    <li><a href="posts.html"> Посты </a></li>
+                    <li><a href="task.html"> Задания </a></li>
+                    <li><a href="rule.html"> Правила </a></li>
+                </ol>
+            </div> -->
+            <div class="header__swith-auth">
+                <div class="user__avatar__text">
+                    <p class="login__text">Вход не выполнен</p>
+                    <img src="img/menu.svg" alt="">
+                </div>
+                <div class="user__avatar__text__menu user__avatar__text__menu-hide">
+                    <button class="form-show log">Войти</button>
+                </div>
+            </div>
+            <script>
+                document.querySelector('.user__avatar__text').addEventListener('click' , (e) => {
+                    document.querySelector('.user__avatar__text__menu').classList.toggle('user__avatar__text__menu-hide')
+                })
+            </script>
+        </header>
+        <div class="main">
+            <p>Прежде чем Отправить ответ на задание ,<br> укажи в поле ввода номер задания и его блок, <br> Например: Блок:1 Задание:1 </p>
+        </div>
+        <footer>
+            <p>@BSL GROUP 2021</p>
+        </footer>
+    </div>
+    <script src="scripts/show.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/rerender.js"></script>
+</body>
+</html>
