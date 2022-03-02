@@ -1,0 +1,27 @@
+@media(max-width: 800px) {
+    .main p {
+        font-size: 19px !important;
+        line-height: 22px !important;
+        margin-left: 47px !important;
+
+    }
+    .header__logo {
+        p {
+            font-size: 14px !important;
+            line-height: inherit !important;
+        }
+    }
+
+    .header__swith-auth {
+        margin: 20px !important;
+    }
+
+    .form-show:hover {
+        
+    }
+
+    .btn__menust {
+        margin-left: 8px !important;
+        width: 20px !important;
+    }
+}
